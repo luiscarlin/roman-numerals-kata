@@ -5,23 +5,23 @@ public class RomanNumerals {
 
         String roman = "";
 
-        if (arabic == 7) {
-            roman = "VII";
-        }
-        else if (arabic == 6) {
-            roman = "VI";
-        }
-        else if (arabic == 5) {
-            roman = "V";
+        if (arabic >= 5) {
+            roman = "V" + repeat(arabic - 5);
         }
         else if (arabic == 4) {
             roman = "IV";
         }
         else {
-            for (int i = 0; i < arabic; i++) {
-                roman += "I";
-            }
+            roman += repeat(arabic);
         }
         return roman;
+    }
+    private String repeat(int times) {
+        String repeatedNum = "";
+
+        for (int i = 0; i < times; i++) {
+            repeatedNum += "I";
+        }
+        return repeatedNum;
     }
 }

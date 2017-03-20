@@ -28,22 +28,15 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvert4ToIV() throws Exception {
+    public void shouldConvert4() throws Exception {
         assertArabicConvertsToRoman(4, "IV");
     }
 
     @Test
-    public void shouldConvert5ToV() throws Exception {
+    public void shouldConvert5To8() throws Exception {
         assertArabicConvertsToRoman(5, "V");
-    }
-
-    @Test
-    public void shouldConvert6ToVI() throws Exception {
         assertArabicConvertsToRoman(6, "VI");
-    }
-
-    @Test
-    public void shouldConvert7ToVII() throws Exception {
         assertArabicConvertsToRoman(7, "VII");
+        assertArabicConvertsToRoman(8, "VIII");
     }
 }
