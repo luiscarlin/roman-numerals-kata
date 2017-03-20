@@ -5,7 +5,10 @@ public class RomanNumerals {
 
         String roman = "";
 
-        if (arabic == 5) {
+        if (arabic == 6) {
+            roman = "VI";
+        }
+        else if (arabic == 5) {
             roman = "V";
         }
         else if (arabic == 4) {

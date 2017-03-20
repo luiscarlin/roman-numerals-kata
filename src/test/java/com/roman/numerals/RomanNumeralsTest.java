@@ -21,17 +21,9 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvert1ToI() throws Exception {
+    public void shouldConvert1To3() throws Exception {
         assertArabicConvertsToRoman(1, "I");
-    }
-
-    @Test
-    public void shouldConvert2ToII() throws Exception {
         assertArabicConvertsToRoman(2, "II");
-    }
-
-    @Test
-    public void shouldConvert3ToIII() throws Exception {
         assertArabicConvertsToRoman(3, "III");
     }
 
@@ -43,5 +35,10 @@ public class RomanNumeralsTest {
     @Test
     public void shouldConvert5ToV() throws Exception {
         assertArabicConvertsToRoman(5, "V");
+    }
+
+    @Test
+    public void shouldConvert6ToVI() throws Exception {
+        assertArabicConvertsToRoman(6, "VI");
     }
 }
