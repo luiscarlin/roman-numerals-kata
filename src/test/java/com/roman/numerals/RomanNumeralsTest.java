@@ -1,5 +1,6 @@
 package com.roman.numerals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -7,11 +8,25 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class RomanNumeralsTest {
+    RomanNumerals underTest;
+
+    private void assertArabicConvertsToRoman(int arabic, String expectedRoman) {
+        String roman = underTest.convertToRoman(arabic);
+        assertThat(roman, is(equalTo(expectedRoman)));
+    }
+
+    @Before
+    public void setUp() throws Exception {
+        underTest = new RomanNumerals();
+    }
 
     @Test
     public void shouldConvert1ToI() throws Exception {
-        RomanNumerals romanNumerals = new RomanNumerals();
-        String roman = romanNumerals.convertToRoman(1);
-        assertThat(roman, is(equalTo("I")));
+        assertArabicConvertsToRoman(1, "I");
+    }
+
+    @Test
+    public void shouldConvert3ToIII() throws Exception {
+        assertArabicConvertsToRoman(3, "III");
     }
 }
