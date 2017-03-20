@@ -5,12 +5,16 @@ public class RomanNumerals {
 
         String roman = "";
 
-        if (arabic == 4) {
-            return "IV";
+        if (arabic == 5) {
+            roman = "V";
         }
-
-        for (int i = 0; i < arabic; i++) {
-            roman += "I";
+        else if (arabic == 4) {
+            roman = "IV";
+        }
+        else {
+            for (int i = 0; i < arabic; i++) {
+                roman += "I";
+            }
         }
         return roman;
     }
