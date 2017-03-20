@@ -34,4 +34,9 @@ public class RomanNumeralsTest {
     public void shouldConvert3ToIII() throws Exception {
         assertArabicConvertsToRoman(3, "III");
     }
+
+    @Test
+    public void shouldConvert4ToIV() throws Exception {
+        assertArabicConvertsToRoman(4, "IV");
+    }
 }
