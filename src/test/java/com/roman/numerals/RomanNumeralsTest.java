@@ -22,7 +22,12 @@ public class RomanNumeralsTest {
 
     @Test
     public void shouldReturnNullaFor0() throws Exception {
-        assertArabicConvertsToRoman(0, "Nulla");
+        assertArabicConvertsToRoman(0, "NULLA");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionForNegativeNumber() throws Exception {
+        underTest.convertToRoman(-1);
     }
 
     @Test

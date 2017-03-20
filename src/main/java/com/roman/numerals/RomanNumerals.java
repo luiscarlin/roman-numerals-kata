@@ -6,7 +6,10 @@ public class RomanNumerals {
         String roman = "";
 
         if (arabic == 0) {
-            return "Nulla";
+            return "NULLA";
+        }
+        if (arabic < 0) {
+            throw new IllegalArgumentException();
         }
 
         if (arabic == 9) {
