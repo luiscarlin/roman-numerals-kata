@@ -26,6 +26,11 @@ public class RomanNumeralsTest {
     }
 
     @Test
+    public void shouldConvert2ToII() throws Exception {
+        assertArabicConvertsToRoman(2, "II");
+    }
+
+    @Test
     public void shouldConvert3ToIII() throws Exception {
         assertArabicConvertsToRoman(3, "III");
     }
