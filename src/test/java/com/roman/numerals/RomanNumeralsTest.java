@@ -41,4 +41,9 @@ public class RomanNumeralsTest {
     public void shouldConvert6ToVI() throws Exception {
         assertArabicConvertsToRoman(6, "VI");
     }
+
+    @Test
+    public void shouldConvert7ToVII() throws Exception {
+        assertArabicConvertsToRoman(7, "VII");
+    }
 }
