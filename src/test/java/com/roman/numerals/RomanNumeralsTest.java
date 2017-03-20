@@ -21,6 +21,11 @@ public class RomanNumeralsTest {
     }
 
     @Test
+    public void shouldReturnNullaFor0() throws Exception {
+        assertArabicConvertsToRoman(0, "Nulla");
+    }
+
+    @Test
     public void shouldConvert1To3() throws Exception {
         assertArabicConvertsToRoman(1, "I");
         assertArabicConvertsToRoman(2, "II");

@@ -5,6 +5,10 @@ public class RomanNumerals {
 
         String roman = "";
 
+        if (arabic == 0) {
+            return "Nulla";
+        }
+
         if (arabic == 9) {
              roman = "IX";
         }
