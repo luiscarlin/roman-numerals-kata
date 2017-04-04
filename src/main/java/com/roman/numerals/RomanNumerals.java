@@ -6,27 +6,30 @@ public class RomanNumerals {
         String roman = "";
 
         if (arabic == 0) {
-            return "NULLA";
+            return RomanChars.NULLA;
         }
 
         if (arabic < 0 || arabic >= 4000) {
             throw new IllegalArgumentException();
         }
 
-        if (arabic >= 1 && arabic <= 3) {
-            roman += repeat(arabic);
-        }
-        else if (arabic == 4) {
-            roman = "IV";
+        if (arabic == 4) {
+            roman = RomanChars.I + RomanChars.V;
         }
         else if (arabic >= 5 && arabic <= 8) {
-            roman = "V" + repeat(arabic - 5);
+            roman = RomanChars.V + repeat(arabic - 5);
         }
         else if (arabic == 9) {
-            roman = "IX";
+            roman = RomanChars.I + RomanChars.X;
+        }
+        else if (arabic == 10) {
+            roman = RomanChars.X;
+        }
+        else if (arabic == 50) {
+            roman = RomanChars.L;
         }
         else {
-            roman = "X";
+            roman += repeat(arabic);
         }
 
         return roman;
@@ -35,7 +38,7 @@ public class RomanNumerals {
         String repeatedNum = "";
 
         for (int i = 0; i < times; i++) {
-            repeatedNum += "I";
+            repeatedNum += RomanChars.I;
         }
         return repeatedNum;
     }
