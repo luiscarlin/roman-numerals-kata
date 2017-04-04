@@ -36,19 +36,19 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvert1To3() throws Exception {
+    public void shouldConvertSingleDigit1To3() throws Exception {
         assertArabicConvertsToRoman(1, "I");
         assertArabicConvertsToRoman(2, "II");
         assertArabicConvertsToRoman(3, "III");
     }
 
     @Test
-    public void shouldConvert4() throws Exception {
+    public void shouldConvertSingleDigit4() throws Exception {
         assertArabicConvertsToRoman(4, "IV");
     }
 
     @Test
-    public void shouldConvert5To8() throws Exception {
+    public void shouldConvertSingleDigit5To8() throws Exception {
         assertArabicConvertsToRoman(5, "V");
         assertArabicConvertsToRoman(6, "VI");
         assertArabicConvertsToRoman(7, "VII");
@@ -56,32 +56,32 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvert9() throws Exception {
+    public void shouldConvertSingleDigit9() throws Exception {
         assertArabicConvertsToRoman(9, "IX");
     }
 
     @Test
-    public void shouldConvert10() throws Exception {
+    public void shouldConvertDoubleDigits10() throws Exception {
         assertArabicConvertsToRoman(10, "X");
     }
 
     @Test
-    public void shouldConvert50() throws Exception {
+    public void shouldConvertDoubleDigits50() throws Exception {
         assertArabicConvertsToRoman(50, "L");
     }
 
     @Test
-    public void shouldConvert100() throws Exception {
+    public void shouldConvertThreeDigits100() throws Exception {
         assertArabicConvertsToRoman(100, "C");
     }
 
     @Test
-    public void shouldConvert500() throws Exception {
+    public void shouldConvertThreeDigits500() throws Exception {
         assertArabicConvertsToRoman(500, "D");
     }
 
     @Test
-    public void shouldConvert1000() throws Exception {
+    public void shouldConvertFourDigits1000() throws Exception {
         assertArabicConvertsToRoman(1000, "M");
     }
 }
