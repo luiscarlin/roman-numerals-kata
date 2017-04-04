@@ -1,9 +1,10 @@
 package com.roman.numerals;
 
 class RomanChars {
-    public static String NULLA = "NULLA";
-    public static String I = "I";
-    public static String V = "V";
-    public static String X = "X";
-    public static String L = "L";
+    public static final String NULLA = "NULLA";
+    public static final String I = "I";
+    public static final String V = "V";
+    public static final String X = "X";
+    public static final String L = "L";
+    public static final String C = "C";
 }
