@@ -8,22 +8,27 @@ public class RomanNumerals {
         if (arabic == 0) {
             return "NULLA";
         }
+
         if (arabic < 0 || arabic >= 4000) {
             throw new IllegalArgumentException();
         }
 
-        if (arabic == 9) {
-             roman = "IX";
-        }
-        else if (arabic >= 5) {
-            roman = "V" + repeat(arabic - 5);
+        if (arabic >= 1 && arabic <= 3) {
+            roman += repeat(arabic);
         }
         else if (arabic == 4) {
             roman = "IV";
         }
-        else {
-            roman += repeat(arabic);
+        else if (arabic >= 5 && arabic <= 8) {
+            roman = "V" + repeat(arabic - 5);
         }
+        else if (arabic == 9) {
+            roman = "IX";
+        }
+        else {
+            roman = "X";
+        }
+
         return roman;
     }
     private String repeat(int times) {

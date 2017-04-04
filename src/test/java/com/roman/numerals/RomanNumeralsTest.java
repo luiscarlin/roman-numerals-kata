@@ -59,4 +59,9 @@ public class RomanNumeralsTest {
     public void shouldConvert9() throws Exception {
         assertArabicConvertsToRoman(9, "IX");
     }
+
+    @Test
+    public void shouldConvert10() throws Exception {
+        assertArabicConvertsToRoman(10, "X");
+    }
 }
