@@ -79,4 +79,9 @@ public class RomanNumeralsTest {
     public void shouldConvert500() throws Exception {
         assertArabicConvertsToRoman(500, "D");
     }
+
+    @Test
+    public void shouldConvert1000() throws Exception {
+        assertArabicConvertsToRoman(1000, "M");
+    }
 }

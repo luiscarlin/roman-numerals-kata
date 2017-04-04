@@ -22,5 +22,6 @@ public class RomanCharsTest {
         assertThat(RomanChars.L, is("L"));
         assertThat(RomanChars.C, is("C"));
         assertThat(RomanChars.D, is("D"));
+        assertThat(RomanChars.M, is("M"));
     }
 }

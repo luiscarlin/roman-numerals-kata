@@ -34,6 +34,9 @@ public class RomanNumerals {
         else if (arabic == 500) {
             roman = RomanChars.D;
         }
+        else if (arabic == 1000) {
+            roman = RomanChars.M;
+        }
         else {
             roman += repeat(arabic);
         }
