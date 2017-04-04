@@ -30,6 +30,11 @@ public class RomanNumeralsTest {
         underTest.convertToRoman(-1);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionForLargeNumber() throws Exception {
+        underTest.convertToRoman(4000);
+    }
+
     @Test
     public void shouldConvert1To3() throws Exception {
         assertArabicConvertsToRoman(1, "I");

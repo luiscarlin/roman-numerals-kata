@@ -8,7 +8,7 @@ public class RomanNumerals {
         if (arabic == 0) {
             return "NULLA";
         }
-        if (arabic < 0) {
+        if (arabic < 0 || arabic >= 4000) {
             throw new IllegalArgumentException();
         }
 
