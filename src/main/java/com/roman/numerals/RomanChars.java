@@ -7,4 +7,5 @@ class RomanChars {
     public static final String X = "X";
     public static final String L = "L";
     public static final String C = "C";
+    public static final String D = "D";
 }
