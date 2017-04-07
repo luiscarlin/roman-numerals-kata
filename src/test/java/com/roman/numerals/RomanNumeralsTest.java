@@ -61,11 +61,31 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertDoubleDigits10To30() throws Exception {
+    public void shouldConvertPowersOfTenBelow100() throws Exception {
         assertArabicConvertsToRoman(10, "X");
         assertArabicConvertsToRoman(20, "XX");
         assertArabicConvertsToRoman(30, "XXX");
+        assertArabicConvertsToRoman(40, "XL");
+        assertArabicConvertsToRoman(50, "L");
+        assertArabicConvertsToRoman(60, "LX");
+        assertArabicConvertsToRoman(70, "LXX");
+        assertArabicConvertsToRoman(80, "LXXX");
+        assertArabicConvertsToRoman(90, "XC");
     }
+
+    @Test
+    public void shouldConvertDoubleDigitsBelow100ThatAreNotPowerOfTen() throws Exception {
+        assertArabicConvertsToRoman(13, "XIII");
+        assertArabicConvertsToRoman(14, "XIV");
+        assertArabicConvertsToRoman(64, "LXIV");
+        assertArabicConvertsToRoman(99, "XCIX");
+        assertArabicConvertsToRoman(55, "LV");
+        assertArabicConvertsToRoman(33, "XXXIII");
+        assertArabicConvertsToRoman(44, "XLIV");
+        assertArabicConvertsToRoman(25, "XXV");
+        assertArabicConvertsToRoman(17, "XVII");
+    }
+
 
     @Test
     public void shouldConvertDoubleDigits50() throws Exception {
