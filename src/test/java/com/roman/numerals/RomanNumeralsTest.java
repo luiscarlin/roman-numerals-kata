@@ -86,20 +86,17 @@ public class RomanNumeralsTest {
         assertArabicConvertsToRoman(17, "XVII");
     }
 
-
     @Test
-    public void shouldConvertDoubleDigits50() throws Exception {
-        assertArabicConvertsToRoman(50, "L");
-    }
-
-    @Test
-    public void shouldConvertThreeDigits100() throws Exception {
+    public void shouldConvertPowersOfTenBelow1000AndAbove100() throws Exception {
         assertArabicConvertsToRoman(100, "C");
-    }
-
-    @Test
-    public void shouldConvertThreeDigits500() throws Exception {
+        assertArabicConvertsToRoman(200, "CC");
+        assertArabicConvertsToRoman(300, "CCC");
+        assertArabicConvertsToRoman(400, "CD");
         assertArabicConvertsToRoman(500, "D");
+        assertArabicConvertsToRoman(600, "DC");
+        assertArabicConvertsToRoman(700, "DCC");
+        assertArabicConvertsToRoman(800, "DCCC");
+        assertArabicConvertsToRoman(900, "CM");
     }
 
     @Test

@@ -13,24 +13,29 @@ public class RomanNumerals {
             return RomanChars.NULLA;
         }
 
+        if (arabic == 1000) {
+            return RomanChars.M;
+        }
+
+        int hundredsDigit = arabic/100;
+        if (hundredsDigit != 0) {
+            roman = convertDigit(hundredsDigit, RomanChars.C, RomanChars.D, RomanChars.M);
+
+            // two digit number
+            arabic = arabic % 100;
+        }
+
         int tensDigit = arabic/10;
         if (tensDigit != 0) {
-            roman = convertDigit(tensDigit, RomanChars.X, RomanChars.L, RomanChars.C);
+            roman = roman + convertDigit(tensDigit, RomanChars.X, RomanChars.L, RomanChars.C);
+
+            // one digit number
+            arabic = arabic % 10;
         }
 
-        int onesDigit = arabic % 10;
+        int onesDigit = arabic;
         if (onesDigit != 0) {
             roman = roman + convertDigit(onesDigit, RomanChars.I, RomanChars.V, RomanChars.X);
-        }
-
-        if (arabic == 100) {
-            roman = RomanChars.C;
-        }
-        else if (arabic == 500) {
-            roman = RomanChars.D;
-        }
-        else if (arabic == 1000) {
-            roman = RomanChars.M;
         }
 
         return roman;
