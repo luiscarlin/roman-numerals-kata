@@ -74,7 +74,7 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertDoubleDigitsBelow100ThatAreNotPowerOfTen() throws Exception {
+    public void shouldConvertDoubleThatAreNotPowerOfTen() throws Exception {
         assertArabicConvertsToRoman(13, "XIII");
         assertArabicConvertsToRoman(14, "XIV");
         assertArabicConvertsToRoman(64, "LXIV");
@@ -87,7 +87,7 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertPowersOfTenBelow1000AndAbove100() throws Exception {
+    public void shouldConvertPowersOf100Above100AndBelow1000() throws Exception {
         assertArabicConvertsToRoman(100, "C");
         assertArabicConvertsToRoman(200, "CC");
         assertArabicConvertsToRoman(300, "CCC");
@@ -97,6 +97,19 @@ public class RomanNumeralsTest {
         assertArabicConvertsToRoman(700, "DCC");
         assertArabicConvertsToRoman(800, "DCCC");
         assertArabicConvertsToRoman(900, "CM");
+    }
+
+    @Test
+    public void shouldConvertTripleDigitsThatAreNotPowerOf100() throws Exception {
+        assertArabicConvertsToRoman(155, "CLV");
+        assertArabicConvertsToRoman(289, "CCLXXXIX");
+        assertArabicConvertsToRoman(375, "CCCLXXV");
+        assertArabicConvertsToRoman(498, "CDXCVIII");
+        assertArabicConvertsToRoman(501, "DI");
+        assertArabicConvertsToRoman(699, "DCXCIX");
+        assertArabicConvertsToRoman(740, "DCCXL");
+        assertArabicConvertsToRoman(891, "DCCCXCI");
+        assertArabicConvertsToRoman(966, "CMLXVI");
     }
 
     @Test
