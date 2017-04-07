@@ -61,7 +61,7 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertPowersOfTenBelow100() throws Exception {
+    public void shouldConvertPowersOf10Below100() throws Exception {
         assertArabicConvertsToRoman(10, "X");
         assertArabicConvertsToRoman(20, "XX");
         assertArabicConvertsToRoman(30, "XXX");
@@ -87,7 +87,7 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertPowersOf100Above100AndBelow1000() throws Exception {
+    public void shouldConvertPowersOf100Below1000() throws Exception {
         assertArabicConvertsToRoman(100, "C");
         assertArabicConvertsToRoman(200, "CC");
         assertArabicConvertsToRoman(300, "CCC");
@@ -113,7 +113,9 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertFourDigits1000() throws Exception {
+    public void shouldConvertPowersOf1000Below4000() throws Exception {
         assertArabicConvertsToRoman(1000, "M");
+        assertArabicConvertsToRoman(2000, "MM");
+        assertArabicConvertsToRoman(3000, "MMM");
     }
 }

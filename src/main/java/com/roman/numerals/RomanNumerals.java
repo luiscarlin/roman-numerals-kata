@@ -13,13 +13,17 @@ public class RomanNumerals {
             return RomanChars.NULLA;
         }
 
-        if (arabic == 1000) {
-            return RomanChars.M;
+        int thousandsDigit = arabic/1000;
+        if (thousandsDigit != 0) {
+            roman = repeat(RomanChars.M, thousandsDigit);
+
+            // three digit number
+            arabic = arabic % 1000;
         }
 
         int hundredsDigit = arabic/100;
         if (hundredsDigit != 0) {
-            roman = convertDigit(hundredsDigit, RomanChars.C, RomanChars.D, RomanChars.M);
+            roman = roman + convertDigit(hundredsDigit, RomanChars.C, RomanChars.D, RomanChars.M);
 
             // two digit number
             arabic = arabic % 100;
