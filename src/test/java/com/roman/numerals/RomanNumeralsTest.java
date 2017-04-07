@@ -118,4 +118,17 @@ public class RomanNumeralsTest {
         assertArabicConvertsToRoman(2000, "MM");
         assertArabicConvertsToRoman(3000, "MMM");
     }
+
+    @Test
+    public void shouldConvertFourDigitNumbersThatAreNotPowerOf1000() throws Exception {
+        assertArabicConvertsToRoman(1066, "MLXVI");
+        assertArabicConvertsToRoman(2789, "MMDCCLXXXIX");
+        assertArabicConvertsToRoman(3090, "MMMXC");
+        assertArabicConvertsToRoman(3999, "MMMCMXCIX");
+        assertArabicConvertsToRoman(1001, "MI");
+        assertArabicConvertsToRoman(2893, "MMDCCCXCIII");
+        assertArabicConvertsToRoman(3677, "MMMDCLXXVII");
+        assertArabicConvertsToRoman(2435, "MMCDXXXV");
+        assertArabicConvertsToRoman(3345, "MMMCCCXLV");
+    }
 }
