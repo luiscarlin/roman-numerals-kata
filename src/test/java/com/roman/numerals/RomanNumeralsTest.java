@@ -61,8 +61,10 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertDoubleDigits10() throws Exception {
+    public void shouldConvertDoubleDigits10To30() throws Exception {
         assertArabicConvertsToRoman(10, "X");
+        assertArabicConvertsToRoman(20, "XX");
+        assertArabicConvertsToRoman(30, "XXX");
     }
 
     @Test
