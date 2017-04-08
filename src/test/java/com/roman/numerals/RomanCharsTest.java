@@ -14,7 +14,7 @@ public class RomanCharsTest {
     }
 
     @Test
-    public void ShouldReturnCorrectValue() throws Exception {
+    public void shouldReturnCorrectValue() throws Exception {
         assertThat(RomanChars.NULLA, is("NULLA"));
         assertThat(RomanChars.I, is("I"));
         assertThat(RomanChars.V, is("V"));

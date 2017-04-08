@@ -3,7 +3,7 @@ package com.roman.numerals;
 public class RomanNumerals {
     public String convertToRoman(int arabic) {
 
-        String roman = "";
+        StringBuilder romanSb = new StringBuilder();
 
         if (arabic < 0 || arabic >= 4000) {
             throw new IllegalArgumentException();
@@ -15,7 +15,7 @@ public class RomanNumerals {
 
         int thousandsDigit = arabic/1000;
         if (thousandsDigit != 0) {
-            roman = repeat(RomanChars.M, thousandsDigit);
+            romanSb.append(repeat(RomanChars.M, thousandsDigit));
 
             // three digit number
             arabic = arabic % 1000;
@@ -23,7 +23,7 @@ public class RomanNumerals {
 
         int hundredsDigit = arabic/100;
         if (hundredsDigit != 0) {
-            roman = roman + convertDigit(hundredsDigit, RomanChars.C, RomanChars.D, RomanChars.M);
+            romanSb.append(convertDigit(hundredsDigit, RomanChars.C, RomanChars.D, RomanChars.M));
 
             // two digit number
             arabic = arabic % 100;
@@ -31,7 +31,7 @@ public class RomanNumerals {
 
         int tensDigit = arabic/10;
         if (tensDigit != 0) {
-            roman = roman + convertDigit(tensDigit, RomanChars.X, RomanChars.L, RomanChars.C);
+            romanSb.append(convertDigit(tensDigit, RomanChars.X, RomanChars.L, RomanChars.C));
 
             // one digit number
             arabic = arabic % 10;
@@ -39,38 +39,39 @@ public class RomanNumerals {
 
         int onesDigit = arabic;
         if (onesDigit != 0) {
-            roman = roman + convertDigit(onesDigit, RomanChars.I, RomanChars.V, RomanChars.X);
+            romanSb.append(convertDigit(onesDigit, RomanChars.I, RomanChars.V, RomanChars.X));
         }
 
-        return roman;
+        return romanSb.toString();
     }
 
     private String convertDigit(int digitToConvert, String onePosition, String fivePosition, String nextPowerOfTen) {
-        String roman = "";
+
+        StringBuilder romanSb = new StringBuilder();
 
         if (digitToConvert == 4) {
-            roman = onePosition + fivePosition;
+            romanSb.append(onePosition + fivePosition);
         }
         else if (digitToConvert >= 5 && digitToConvert <= 8) {
-            roman = fivePosition + repeat(onePosition, digitToConvert - 5);
+            romanSb.append(fivePosition + repeat(onePosition, digitToConvert - 5));
 
         }
         else if (digitToConvert == 9) {
-            roman = onePosition + nextPowerOfTen;
+            romanSb.append(onePosition + nextPowerOfTen);
         }
         else {
-            roman += repeat(onePosition, digitToConvert);
+            romanSb.append(repeat(onePosition, digitToConvert));
         }
 
-        return roman;
+        return romanSb.toString();
     }
 
     private String repeat(String charToRepeat, int times) {
-        String repeatedNum = "";
+        StringBuilder romanSb = new StringBuilder();
 
         for (int i = 0; i < times; i++) {
-            repeatedNum += charToRepeat;
+            romanSb.append(charToRepeat);
         }
-        return repeatedNum;
+        return romanSb.toString();
     }
 }
