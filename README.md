@@ -21,4 +21,5 @@ git clone <this-repo>; cd <this-repo>
 | -------- |:---------------------------------------------:|
 | JaCoCo   | `./build/reports/jacoco/test/html/index.html` |
 | FindBugs | `./build/reports/findbugs/*`                  |
+| PMD      | `./build/reports/pmd/*`                       |
 | JUnit    | `./build/reports/tests/test/index.html`       |
