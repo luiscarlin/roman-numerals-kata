@@ -3,11 +3,10 @@
 Classic roman numerals kata converting arabic numbers to roman numerals.
 
 
-## Features
+## Setup
 
-- TDD
+- CircleCI to build and test all master commits
 - 100% test coverage enforcement at build time
-- CircleCI
 
 ## Run
 
