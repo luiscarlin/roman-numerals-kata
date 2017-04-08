@@ -18,7 +18,8 @@ git clone <this-repo>; cd <this-repo>
 
 ## Reports
 
-| Name    | Path                                          |
-| ------- |:---------------------------------------------:|
-| JaCoCo  | `./build/reports/jacoco/test/html/index.html` |
-| JUnit   | `./build/reports/tests/test/index.html`       |
+| Name     | Path                                          |
+| -------- |:---------------------------------------------:|
+| JaCoCo   | `./build/reports/jacoco/test/html/index.html` |
+| FindBugs | `./build/reports/findbugs/*`                  |
+| JUnit    | `./build/reports/tests/test/index.html`       |
