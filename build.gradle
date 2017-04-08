@@ -1,12 +1,28 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
 
+ext { 
+    junitVersion  = '4.12'
+    jacocoVersion = '0.7.9'
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+    testCompile group: 'junit', name: 'junit', version: junitVersion
 }
 
-build.finalizedBy(jacocoTestReport)
+jacoco {
+    toolVersion = jacocoVersion
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = false
+        csv.enabled = false
+    }
+}
+
+test.finalizedBy jacocoTestReport
