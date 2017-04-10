@@ -5,8 +5,9 @@ Classic roman numerals kata converting arabic numbers to roman numerals.
 
 ## Setup
 
-- CircleCI to build and test all master commits
-- 100% test coverage enforcement at build time
+- `CircleCI` to build and test all master commits
+- 100% test coverage enforcement at build time using `JaCoCo`
+- Static analysis using `FindBugs` and `PMD`
 
 ## Run
 
