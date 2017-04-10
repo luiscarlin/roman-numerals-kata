@@ -15,6 +15,11 @@ public class RomanNumeralsTest {
         assertThat(roman, is(equalTo(expectedRoman)));
     }
 
+    private void assertRomanConvertsToArabic(String roman, int expectedArabic) {
+        int arabic = underTest.convertToArabic(roman);
+        assertThat(arabic, is(equalTo(expectedArabic)));
+    }
+
     @Before
     public void setUp() throws Exception {
         underTest = new RomanNumerals();
@@ -26,29 +31,29 @@ public class RomanNumeralsTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowExceptionForNegativeNumber() throws Exception {
+    public void shouldThrowExceptionForNegativeArabicNumber() throws Exception {
         underTest.convertToRoman(-1);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowExceptionForLargeNumber() throws Exception {
+    public void shouldThrowExceptionForLargeArabicNumber() throws Exception {
         underTest.convertToRoman(4000);
     }
 
     @Test
-    public void shouldConvertSingleDigit1To3() throws Exception {
+    public void shouldConvertSingleDigit1To3ToRoman() throws Exception {
         assertArabicConvertsToRoman(1, "I");
         assertArabicConvertsToRoman(2, "II");
         assertArabicConvertsToRoman(3, "III");
     }
 
     @Test
-    public void shouldConvertSingleDigit4() throws Exception {
+    public void shouldConvertSingleDigit4ToRoman() throws Exception {
         assertArabicConvertsToRoman(4, "IV");
     }
 
     @Test
-    public void shouldConvertSingleDigit5To8() throws Exception {
+    public void shouldConvertSingleDigit5To8ToRoman() throws Exception {
         assertArabicConvertsToRoman(5, "V");
         assertArabicConvertsToRoman(6, "VI");
         assertArabicConvertsToRoman(7, "VII");
@@ -56,12 +61,12 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertSingleDigit9() throws Exception {
+    public void shouldConvertSingleDigit9ToRoman() throws Exception {
         assertArabicConvertsToRoman(9, "IX");
     }
 
     @Test
-    public void shouldConvertPowersOf10Below100() throws Exception {
+    public void shouldConvertPowersOf10Below100ToRoman() throws Exception {
         assertArabicConvertsToRoman(10, "X");
         assertArabicConvertsToRoman(20, "XX");
         assertArabicConvertsToRoman(30, "XXX");
@@ -74,7 +79,7 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertDoubleThatAreNotPowerOfTen() throws Exception {
+    public void shouldConvertDoubleThatAreNotPowerOfTenToRoman() throws Exception {
         assertArabicConvertsToRoman(13, "XIII");
         assertArabicConvertsToRoman(14, "XIV");
         assertArabicConvertsToRoman(64, "LXIV");
@@ -87,7 +92,7 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertPowersOf100Below1000() throws Exception {
+    public void shouldConvertPowersOf100Below1000ToRoman() throws Exception {
         assertArabicConvertsToRoman(100, "C");
         assertArabicConvertsToRoman(200, "CC");
         assertArabicConvertsToRoman(300, "CCC");
@@ -100,7 +105,7 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertTripleDigitsThatAreNotPowerOf100() throws Exception {
+    public void shouldConvertTripleDigitsThatAreNotPowerOf100ToRoman() throws Exception {
         assertArabicConvertsToRoman(155, "CLV");
         assertArabicConvertsToRoman(289, "CCLXXXIX");
         assertArabicConvertsToRoman(375, "CCCLXXV");
@@ -113,14 +118,14 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertPowersOf1000Below4000() throws Exception {
+    public void shouldConvertPowersOf1000Below4000ToRoman() throws Exception {
         assertArabicConvertsToRoman(1000, "M");
         assertArabicConvertsToRoman(2000, "MM");
         assertArabicConvertsToRoman(3000, "MMM");
     }
 
     @Test
-    public void shouldConvertFourDigitNumbersThatAreNotPowerOf1000() throws Exception {
+    public void shouldConvertFourDigitNumbersThatAreNotPowerOf1000ToRoman() throws Exception {
         assertArabicConvertsToRoman(1066, "MLXVI");
         assertArabicConvertsToRoman(2789, "MMDCCLXXXIX");
         assertArabicConvertsToRoman(3090, "MMMXC");
@@ -130,5 +135,10 @@ public class RomanNumeralsTest {
         assertArabicConvertsToRoman(3677, "MMMDCLXXVII");
         assertArabicConvertsToRoman(2435, "MMCDXXXV");
         assertArabicConvertsToRoman(3345, "MMMCCCXLV");
+    }
+
+    @Test
+    public void shouldConvertNullaTo0() throws Exception {
+        assertRomanConvertsToArabic("NULLA", 0);
     }
 }

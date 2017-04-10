@@ -74,4 +74,8 @@ public class RomanNumerals {
         }
         return romanSb.toString();
     }
+
+    public int convertToArabic(String roman) {
+        return 0;
+    }
 }
