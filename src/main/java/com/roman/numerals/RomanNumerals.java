@@ -76,13 +76,16 @@ public class RomanNumerals {
     }
 
     public int convertToArabic(String roman) {
+        int arabic = 0;
+
         if (roman.equals(RomanChars.NULLA)) {
             return 0;
         }
-        if (roman.equals("I")) {
-            return 1;
+
+        for (char romanChar : roman.toCharArray()) {
+            arabic += RomanChars.VALUES.get(String.valueOf(romanChar));
         }
 
-        return 2;
+        return arabic;
     }
 }

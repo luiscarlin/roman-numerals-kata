@@ -143,12 +143,9 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    public void shouldConvertIto1() throws Exception {
+    public void shouldConvertItoIIIToArabic() throws Exception {
         assertRomanConvertsToArabic("I", 1);
-    }
-
-    @Test
-    public void shouldConvertIIto2() throws Exception {
         assertRomanConvertsToArabic("II", 2);
+        assertRomanConvertsToArabic("III", 3);
     }
 }

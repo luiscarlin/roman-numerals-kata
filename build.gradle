@@ -6,7 +6,8 @@ apply plugin: 'pmd'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-ext { 
+ext {
+    guavaVersion ='21.0'
     junitVersion  = '4.12'
     jacocoVersion = '0.7.9'
 }
@@ -16,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    compile group: 'com.google.guava', name: 'guava', version: guavaVersion
     testCompile group: 'junit', name: 'junit', version: junitVersion
 }
 
