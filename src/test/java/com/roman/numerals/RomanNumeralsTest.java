@@ -141,4 +141,9 @@ public class RomanNumeralsTest {
     public void shouldConvertNullaTo0() throws Exception {
         assertRomanConvertsToArabic("NULLA", 0);
     }
+
+    @Test
+    public void shouldConvertIto1() throws Exception {
+        assertRomanConvertsToArabic("I", 1);
+    }
 }

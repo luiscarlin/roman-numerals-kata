@@ -76,6 +76,9 @@ public class RomanNumerals {
     }
 
     public int convertToArabic(String roman) {
-        return 0;
+        if (roman.equals(RomanChars.NULLA)) {
+            return 0;
+        }
+        return 1;
     }
 }
