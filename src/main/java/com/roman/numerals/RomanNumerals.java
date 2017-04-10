@@ -79,6 +79,10 @@ public class RomanNumerals {
         if (roman.equals(RomanChars.NULLA)) {
             return 0;
         }
-        return 1;
+        if (roman.equals("I")) {
+            return 1;
+        }
+
+        return 2;
     }
 }
