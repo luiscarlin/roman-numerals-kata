@@ -153,4 +153,12 @@ public class RomanNumeralsTest {
     public void shouldConvertIVToArabic() throws Exception {
         assertRomanConvertsToArabic("IV", 4);
     }
+
+    @Test
+    public void shouldConvertVToVIIIToArabic() throws Exception {
+        assertRomanConvertsToArabic("V", 5);
+        assertRomanConvertsToArabic("VI", 6);
+        assertRomanConvertsToArabic("VII", 7);
+        assertRomanConvertsToArabic("VIII", 8);
+    }
 }
