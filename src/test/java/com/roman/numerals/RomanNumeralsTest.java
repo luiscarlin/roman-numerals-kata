@@ -142,6 +142,11 @@ public class RomanNumeralsTest {
         assertRomanConvertsToArabic("NULLA", 0);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionForNonRomanChars() throws Exception {
+        underTest.convertToArabic("F");
+    }
+
     @Test
     public void shouldConvertItoIIIToArabic() throws Exception {
         assertRomanConvertsToArabic("I", 1);

@@ -78,7 +78,7 @@ public class RomanNumerals {
         return romanSb.toString();
     }
 
-    public int convertToArabic(String roman) {
+    public int convertToArabic(String roman) throws IllegalArgumentException {
         int arabic = 0;
 
         if (roman.equals(RomanChars.NULLA)) {
@@ -88,10 +88,10 @@ public class RomanNumerals {
         PeekingIterator<String> romanIterator = Iterators.peekingIterator(Iterators.forArray(roman.split("")));
 
         while (romanIterator.hasNext()) {
-            int currentCharValue = RomanChars.VALUES.get(romanIterator.next());
+            int currentCharValue = getCharValue(romanIterator.next());
 
             if (romanIterator.hasNext()) {
-                int nextCharValue = RomanChars.VALUES.get(romanIterator.peek());
+                int nextCharValue = getCharValue(romanIterator.peek());
 
                 if (nextCharValue > currentCharValue) {
                     arabic += nextCharValue - currentCharValue;
@@ -101,7 +101,15 @@ public class RomanNumerals {
 
             arabic += currentCharValue;
         }
-
         return arabic;
+    }
+
+    private int getCharValue(String roman) throws IllegalArgumentException {
+        if (RomanChars.VALUES.containsKey(roman)) {
+            return RomanChars.VALUES.get(roman);
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
     }
 }
