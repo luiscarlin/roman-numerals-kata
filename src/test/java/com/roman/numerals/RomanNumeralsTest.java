@@ -148,4 +148,9 @@ public class RomanNumeralsTest {
         assertRomanConvertsToArabic("II", 2);
         assertRomanConvertsToArabic("III", 3);
     }
+
+    @Test
+    public void shouldConvertIVToArabic() throws Exception {
+        assertRomanConvertsToArabic("IV", 4);
+    }
 }

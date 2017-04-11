@@ -16,5 +16,6 @@ class RomanChars {
 
     public static final Map<String, Integer> VALUES = ImmutableMap.<String, Integer>builder()
             .put(I, 1)
+            .put(V, 5)
             .build();
 }

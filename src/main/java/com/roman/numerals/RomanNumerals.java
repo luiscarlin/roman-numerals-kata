@@ -1,5 +1,8 @@
 package com.roman.numerals;
 
+import com.google.common.collect.Iterators;
+import com.google.common.collect.PeekingIterator;
+
 public class RomanNumerals {
     public String convertToRoman(int arabic) {
 
@@ -82,8 +85,21 @@ public class RomanNumerals {
             return 0;
         }
 
-        for (char romanChar : roman.toCharArray()) {
-            arabic += RomanChars.VALUES.get(String.valueOf(romanChar));
+        PeekingIterator<String> romanIterator = Iterators.peekingIterator(Iterators.forArray(roman.split("")));
+
+        while (romanIterator.hasNext()) {
+            int currentCharValue = RomanChars.VALUES.get(romanIterator.next());
+
+            if (romanIterator.hasNext()) {
+                int nextCharValue = RomanChars.VALUES.get(romanIterator.peek());
+
+                if (nextCharValue > currentCharValue) {
+                    arabic += nextCharValue - currentCharValue;
+                    break;
+                }
+            }
+
+            arabic += currentCharValue;
         }
 
         return arabic;
