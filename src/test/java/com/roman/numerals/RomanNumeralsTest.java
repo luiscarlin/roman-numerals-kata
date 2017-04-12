@@ -197,4 +197,17 @@ public class RomanNumeralsTest {
         assertRomanConvertsToArabic("XXV", 25);
         assertRomanConvertsToArabic("XVII", 17);
     }
+
+    @Test
+    public void shouldConvertPowersOf100Below1000ToArabic() throws Exception {
+        assertRomanConvertsToArabic("C", 100);
+        assertRomanConvertsToArabic("CC", 200);
+        assertRomanConvertsToArabic("CCC", 300);
+        assertRomanConvertsToArabic("CD", 400);
+        assertRomanConvertsToArabic("D", 500);
+        assertRomanConvertsToArabic("DC", 600);
+        assertRomanConvertsToArabic("DCC", 700);
+        assertRomanConvertsToArabic("DCCC", 800);
+        assertRomanConvertsToArabic("CM", 900);
+    }
 }
