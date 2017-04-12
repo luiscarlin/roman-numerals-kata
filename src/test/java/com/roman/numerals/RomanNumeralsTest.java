@@ -223,4 +223,11 @@ public class RomanNumeralsTest {
         assertRomanConvertsToArabic("DCCCXCI", 891);
         assertRomanConvertsToArabic("CMLXVI", 966);
     }
+
+    @Test
+    public void shouldConvertPowersOf1000Below4000ToArabic() throws Exception {
+        assertRomanConvertsToArabic("M", 1000);
+        assertRomanConvertsToArabic("MM", 2000);
+        assertRomanConvertsToArabic("MMM", 3000);
+    }
 }
