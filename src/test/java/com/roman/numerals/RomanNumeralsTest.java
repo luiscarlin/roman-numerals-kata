@@ -171,4 +171,17 @@ public class RomanNumeralsTest {
     public void shouldConvertIXToArabic() throws Exception {
         assertRomanConvertsToArabic("IX", 9);
     }
+
+    @Test
+    public void shouldConvertPowersOf10Below100ToArabic() throws Exception {
+        assertRomanConvertsToArabic("X", 10);
+        assertRomanConvertsToArabic("XX", 20);
+        assertRomanConvertsToArabic("XXX", 30);
+        assertRomanConvertsToArabic("XL", 40);
+        assertRomanConvertsToArabic("L", 50);
+        assertRomanConvertsToArabic("LX", 60);
+        assertRomanConvertsToArabic("LXX", 70);
+        assertRomanConvertsToArabic("LXXX", 80);
+        assertRomanConvertsToArabic("XC", 90);
+    }
 }
