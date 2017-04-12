@@ -95,7 +95,9 @@ public class RomanNumerals {
 
                 if (nextCharValue > currentCharValue) {
                     arabic += nextCharValue - currentCharValue;
-                    break;
+                    // consume it
+                    romanIterator.next();
+                    continue;
                 }
             }
 
