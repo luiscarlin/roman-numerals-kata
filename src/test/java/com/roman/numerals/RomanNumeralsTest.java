@@ -210,4 +210,17 @@ public class RomanNumeralsTest {
         assertRomanConvertsToArabic("DCCC", 800);
         assertRomanConvertsToArabic("CM", 900);
     }
+
+    @Test
+    public void shouldConvertNumbersBelow1000ToArabic() throws Exception {
+        assertRomanConvertsToArabic("CLV", 155);
+        assertRomanConvertsToArabic("CCLXXXIX", 289);
+        assertRomanConvertsToArabic("CCCLXXV", 375);
+        assertRomanConvertsToArabic("CDXCVIII", 498);
+        assertRomanConvertsToArabic("DI", 501);
+        assertRomanConvertsToArabic("DCXCIX", 699);
+        assertRomanConvertsToArabic("DCCXL", 740);
+        assertRomanConvertsToArabic("DCCCXCI", 891);
+        assertRomanConvertsToArabic("CMLXVI", 966);
+    }
 }
